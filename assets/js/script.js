@@ -187,16 +187,18 @@ $(".card .list-group").sortable({
 
     // update array on tasks object and save
     tasks[arrName] = tempArr;
-    saveTasks();}  
+    saveTasks();
+  }  
   });  
     
  
   $("#trash").droppable({
     accept: ".card .list-group-item",
     tolerance: "touch",
+        
     drop: function (event, ui) {
-      console.log("drop");
       ui.draggable.remove();
+      console.log("drop");
     },
     over: function (event, ui) {
       console.log("over");
@@ -204,8 +206,16 @@ $(".card .list-group").sortable({
     out: function (event, ui) {
       console.log("out");
     }
-  });
+  })
+  
+    
+// activate: function (event, ui) {
+//   console.log("activate");
 
+// },
+// deactivate: function (event, ui) {
+//   console.log("deactivate");
+// },
 // modal was triggered
 $("#task-form-modal").on("show.bs.modal", function () {
   // clear values
